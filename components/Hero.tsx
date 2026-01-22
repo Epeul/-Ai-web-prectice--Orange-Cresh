@@ -1,59 +1,72 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { ArrowDown } from 'lucide-react';
 
 export const Hero: React.FC = () => {
   return (
-    <section id="about" className="relative min-h-screen pt-16 flex flex-col items-center justify-center overflow-hidden">
-      {/* Background Graphic Elements */}
-      <div className="absolute top-20 left-10 w-32 h-32 bg-crush-orange rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-float"></div>
-      <div className="absolute bottom-20 right-10 w-48 h-48 bg-yellow-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-float" style={{ animationDelay: '1s' }}></div>
+    <section id="about" className="relative min-h-screen pt-20 flex flex-col items-center justify-center overflow-hidden bg-[#FDFBF7]">
+      {/* Abstract Background Blurs */}
+      <div className="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] bg-orange-300/30 rounded-full blur-[100px] animate-pulse"></div>
+      <div className="absolute bottom-[-10%] left-[-10%] w-[600px] h-[600px] bg-yellow-200/40 rounded-full blur-[120px]"></div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 w-full relative z-10 grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 w-full relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         
-        {/* Left Text Content */}
-        <div className="md:col-span-5 flex flex-col gap-6 text-center md:text-left">
-          <div className="inline-block bg-crush-black text-white px-4 py-1 font-bold text-sm tracking-widest uppercase w-max mx-auto md:mx-0 transform -rotate-2">
-            Since 2024
+        {/* Left Text Content - Cleaner & Bolder */}
+        <div className="lg:col-span-5 flex flex-col gap-8 text-center lg:text-left order-2 lg:order-1">
+          <div className="flex flex-col gap-2">
+            <span className="font-sans font-bold text-crush-orange tracking-[0.2em] text-sm uppercase">
+              Est. 2024 Seoul
+            </span>
+            <h1 className="text-6xl lg:text-8xl font-serif font-medium leading-[0.95] text-crush-black tracking-tight">
+              Orange <br />
+              <i className="font-serif font-light text-crush-orange">Crush</i> <br />
+              Moment.
+            </h1>
           </div>
-          <h1 className="text-6xl md:text-8xl font-serif font-black leading-[0.9] text-crush-black">
-            FRESH <br />
-            <span className="text-crush-orange italic">VIBES</span> <br />
-            ONLY.
-          </h1>
-          <p className="text-lg md:text-xl font-sans font-medium leading-relaxed max-w-md mx-auto md:mx-0 text-gray-800">
-            일상의 지루함을 깨는 오렌지빛 감각. <br/>
-            키치한 감성과 진한 커피가 만나는 공간, <br/>
-            오렌지 크러쉬입니다.
+          
+          <p className="text-lg font-sans text-gray-600 leading-relaxed max-w-md mx-auto lg:mx-0 font-medium">
+            감각적인 오렌지빛 공간에서 즐기는 여유. <br/>
+            트렌디한 감성과 깊은 풍미가 공존하는 곳.
           </p>
+
+          <div className="flex gap-4 justify-center lg:justify-start pt-4">
+             <button className="bg-crush-black text-white px-8 py-4 rounded-full font-sans font-bold hover:bg-crush-orange transition-all duration-300 hover:scale-105 hover:shadow-lg text-sm tracking-wide">
+              OUR STORY
+            </button>
+          </div>
         </div>
 
-        {/* Right Image Collage */}
-        <div className="md:col-span-7 relative h-[500px] md:h-[600px] w-full mt-10 md:mt-0">
-          {/* Image 1: Interior Main */}
-          <div className="absolute top-0 right-0 md:right-10 w-64 h-80 md:w-80 md:h-96 z-10 transform rotate-3 border-4 border-crush-black rounded-3xl overflow-hidden shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:rotate-0 transition-transform duration-500">
+        {/* Right Visual - 3D Perspective & Depth */}
+        <div className="lg:col-span-7 relative h-[60vh] w-full flex items-center justify-center perspective-[2000px] order-1 lg:order-2 group">
+          {/* Main Image with 3D Tilt */}
+          <div className="relative w-[80%] h-[90%] transform transition-transform duration-700 ease-out group-hover:rotate-y-[-5deg] group-hover:rotate-x-[5deg] preserve-3d">
+            <div className="absolute inset-0 bg-black/5 rounded-[3rem] transform translate-x-4 translate-y-4 blur-xl"></div>
             <img 
-              src="https://picsum.photos/seed/cafe-interior/600/800" 
-              alt="Cafe Interior" 
-              className="w-full h-full object-cover"
+              src="https://picsum.photos/seed/cafe-interior/800/1000" 
+              alt="Space" 
+              className="w-full h-full object-cover rounded-[3rem] shadow-2xl z-10 relative"
             />
-          </div>
-
-          {/* Image 2: Exterior/Detail */}
-          <div className="absolute bottom-10 left-4 md:left-20 w-56 h-56 md:w-72 md:h-72 z-20 transform -rotate-6 border-4 border-crush-black bg-white p-2 rounded-xl shadow-[8px_8px_0px_0px_rgba(255,77,0,1)] hover:-rotate-2 transition-transform duration-500">
-            <img 
-              src="https://picsum.photos/seed/cafe-exterior/600/600" 
-              alt="Cafe Exterior" 
-              className="w-full h-full object-cover border-2 border-black"
-            />
-            <div className="absolute -top-6 -right-6 bg-crush-orange text-white rounded-full p-4 w-20 h-20 flex items-center justify-center font-bold text-xs transform rotate-12 animate-spin-slow border-2 border-black">
-              OPEN<br/>DAILY
+            
+            {/* Floating Element - Gives Spatial Depth */}
+            <div className="absolute -bottom-10 -left-10 w-48 h-64 transform translate-z-[50px] transition-transform duration-500 hover:translate-y-[-10px]">
+              <div className="absolute inset-0 bg-white/40 backdrop-blur-md rounded-2xl border border-white/50 shadow-xl overflow-hidden p-2">
+                 <img 
+                  src="https://picsum.photos/seed/cafe-exterior/400/500" 
+                  alt="Detail" 
+                  className="w-full h-full object-cover rounded-xl"
+                />
+              </div>
             </div>
+
+             {/* Decorative Circle */}
+             <div className="absolute -top-10 -right-10 w-32 h-32 bg-crush-orange rounded-full flex items-center justify-center text-white font-serif italic text-xl z-20 animate-float shadow-lg">
+                Vibe
+             </div>
           </div>
         </div>
       </div>
 
-      <div className="absolute bottom-8 animate-bounce">
-        <ArrowDown className="w-8 h-8 text-crush-black" />
+      <div className="absolute bottom-10 animate-bounce opacity-50">
+        <ArrowDown className="w-6 h-6 text-crush-black" />
       </div>
     </section>
   );

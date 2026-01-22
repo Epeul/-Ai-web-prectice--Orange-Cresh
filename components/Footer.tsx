@@ -3,53 +3,53 @@ import { Instagram, Twitter, Facebook } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="bg-crush-orange text-white border-t-4 border-black pt-16 pb-8">
+    <footer className="bg-[#1a1a1a] text-white pt-24 pb-12">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
-          <div className="col-span-1 md:col-span-2">
-            <h2 className="text-4xl md:text-5xl font-serif font-black mb-6 text-black">
-              ORANGE CRUSH
-            </h2>
-            <p className="font-sans text-lg max-w-md text-black font-medium">
-              We brew coffee with attitude. <br/>
-              Join the kitsch movement and taste the vibe.
-            </p>
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-20">
+          <div className="md:col-span-5 flex flex-col justify-between">
+            <div>
+              <h2 className="text-4xl font-serif font-medium mb-6 text-white tracking-tight">
+                Orange Crush.
+              </h2>
+              <p className="font-sans text-gray-400 font-normal leading-relaxed max-w-sm">
+                A space for inspiration and comfort. <br/>
+                Experience the difference in every cup.
+              </p>
+            </div>
           </div>
           
-          <div>
-            <h3 className="font-bold text-black border-b-2 border-black pb-2 mb-4 inline-block">LOCATION</h3>
-            <p className="font-sans text-black/80 font-medium">
-              123 Orange Street,<br/>
-              Seoul, Korea<br/><br/>
-              Everyday 10:00 - 22:00
+          <div className="md:col-span-3">
+            <h3 className="font-sans font-bold text-xs tracking-widest text-gray-500 mb-6 uppercase">Visit Us</h3>
+            <p className="font-sans text-gray-300 leading-loose font-light">
+              123 Orange Street, Seoul<br/>
+              02-1234-5678<br/>
+              hello@orangecrush.com
             </p>
           </div>
 
-          <div>
-            <h3 className="font-bold text-black border-b-2 border-black pb-2 mb-4 inline-block">CONTACT</h3>
-            <p className="font-sans text-black/80 font-medium mb-4">
-              hello@orangecrush.com<br/>
-              02-1234-5678
+          <div className="md:col-span-2">
+            <h3 className="font-sans font-bold text-xs tracking-widest text-gray-500 mb-6 uppercase">Hours</h3>
+            <p className="font-sans text-gray-300 leading-loose font-light">
+              Mon - Fri : 08:00 - 22:00<br/>
+              Sat - Sun : 10:00 - 23:00
             </p>
-            <div className="flex gap-4">
-              <a href="#" className="bg-black text-white p-2 rounded-full hover:bg-white hover:text-black transition-colors border-2 border-transparent hover:border-black">
-                <Instagram size={20} />
-              </a>
-              <a href="#" className="bg-black text-white p-2 rounded-full hover:bg-white hover:text-black transition-colors border-2 border-transparent hover:border-black">
-                <Twitter size={20} />
-              </a>
-              <a href="#" className="bg-black text-white p-2 rounded-full hover:bg-white hover:text-black transition-colors border-2 border-transparent hover:border-black">
-                <Facebook size={20} />
-              </a>
-            </div>
+          </div>
+
+          <div className="md:col-span-2">
+             <h3 className="font-sans font-bold text-xs tracking-widest text-gray-500 mb-6 uppercase">Social</h3>
+             <div className="flex gap-4">
+                <a href="#" className="text-gray-400 hover:text-crush-orange transition-colors"><Instagram size={24} /></a>
+                <a href="#" className="text-gray-400 hover:text-crush-orange transition-colors"><Twitter size={24} /></a>
+                <a href="#" className="text-gray-400 hover:text-crush-orange transition-colors"><Facebook size={24} /></a>
+             </div>
           </div>
         </div>
         
-        <div className="border-t-2 border-black/20 pt-8 flex flex-col md:flex-row justify-between items-center text-black/60 font-medium text-sm">
-          <p>© 2024 ORANGE CRUSH CAFE. All rights reserved.</p>
-          <div className="flex gap-4 mt-4 md:mt-0">
-            <a href="#" className="hover:text-black">Privacy Policy</a>
-            <a href="#" className="hover:text-black">Terms of Service</a>
+        <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-gray-500 text-sm font-light">
+          <p>© 2024 ORANGE CRUSH. All rights reserved.</p>
+          <div className="flex gap-8 mt-4 md:mt-0">
+            <a href="#" className="hover:text-white transition-colors">Privacy</a>
+            <a href="#" className="hover:text-white transition-colors">Terms</a>
           </div>
         </div>
       </div>
